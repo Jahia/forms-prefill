@@ -3,3 +3,4 @@
 
 [fcnt:myPrefill] > jnt:content, fcmix:prefill, mix:title, jmix:droppableContent, jmix:hiddenType
 [fcnt:myPrefillTwo] > jnt:content, fcmix:prefill, mix:title, jmix:droppableContent, jmix:hiddenType
+[fcnt:userInfoPrefill] > jnt:content, fcmix:prefill, mix:title, jmix:droppableContent, jmix:hiddenType
