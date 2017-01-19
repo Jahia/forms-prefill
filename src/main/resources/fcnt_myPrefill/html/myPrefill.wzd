@@ -1,0 +1,8 @@
+package fcnt_myPrefill.html
+
+prefill {
+    label "My prefill"
+    type "super"
+    wizard "<ff-myprefill></ff-myprefill>"
+    serviceName "myPrefillService"
+}
