@@ -6,6 +6,7 @@
     var userInfoPrefillService = function (contextualData, $q, $http) {
 
         var dataCache = null;
+        var q = null;
 
         /**
          * MUST IMPLEMENT
@@ -19,7 +20,12 @@
                     resolve(dataCache);
                 });
             }
-            return $q(function(resolve, reject) {
+
+            if (q != null) {
+                return q;
+            }
+
+            q = $q(function(resolve, reject) {
                 $http({
                     //Entry point implemented in form-factory-core module as an example
                     url: contextualData.context + '/modules/formfactory/live/userinfo/' + contextualData.locale,
@@ -35,6 +41,7 @@
                     reject(error);
                 });
             });
+            return q;
         }
     };
 
