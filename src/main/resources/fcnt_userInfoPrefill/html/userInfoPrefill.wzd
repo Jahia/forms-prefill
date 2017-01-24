@@ -6,10 +6,5 @@ prefill {
     wizard "<ff-user-info></ff-user-info>"
     serviceName "userInfoPrefillService"
     dataKey "name"
-
-    properties {
-        dataKeys {
-            values "name", "email", "path"
-        }
-    }
+    availableDataKeys "name", "email", "path"
 }
