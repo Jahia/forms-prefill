@@ -3,7 +3,7 @@ package fcnt_myPrefill.html
 prefill {
     label "My prefill"
     type "super"
-    wizard "<ff-myprefill></ff-myprefill>"
+    wizard "<ff-myprefill view-type='designView'></ff-myprefill>"
     serviceName "myPrefillService"
     dataKey "name"
 }

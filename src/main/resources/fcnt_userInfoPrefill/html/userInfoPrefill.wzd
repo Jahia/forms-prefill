@@ -3,7 +3,7 @@ package fcnt_userInfoPrefill.html
 prefill {
     label "User info prefill"
     type "super"
-    wizard "<ff-user-info></ff-user-info>"
+    wizard "<ff-user-info view-type='designView'></ff-user-info>"
     serviceName "userInfoPrefillService"
     dataKey "name"
     availableDataKeys "name", "email", "path"
