@@ -5,4 +5,5 @@ prefill {
     type "super"
     wizard "<ff-myprefill-two></ff-myprefill-two>"
     serviceName "myPrefillService"
+    dataKey "name"
 }

@@ -21,7 +21,7 @@
                 });
             }
 
-            if (q != null) {
+            if (q !== null) {
                 return q;
             }
 
