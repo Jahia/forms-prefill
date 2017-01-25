@@ -1,0 +1,10 @@
+package fcnt_chuckNorrisPrefill.html
+
+prefill {
+    label "Chuck norris prefill"
+    type "super"
+    wizard "<ff-chuck-norris view-type='designView'></ff-chuck-norris>"
+    serviceName "chuckNorrisPrefillService"
+    dataKey "joke"
+    availableDataKeys "joke", "category", "id"
+}

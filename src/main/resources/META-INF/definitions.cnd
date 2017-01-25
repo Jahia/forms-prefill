@@ -1,6 +1,5 @@
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
 
-[fcnt:myPrefill] > jnt:content, fcmix:prefill, mix:title, jmix:droppableContent, jmix:hiddenType
-[fcnt:myPrefillTwo] > jnt:content, fcmix:prefill, mix:title, jmix:droppableContent, jmix:hiddenType
 [fcnt:userInfoPrefill] > jnt:content, fcmix:prefill, mix:title, jmix:droppableContent, jmix:hiddenType
+[fcnt:chuckNorrisPrefill] > jnt:content, fcmix:prefill, mix:title, jmix:droppableContent, jmix:hiddenType
