@@ -32,7 +32,7 @@
                 }).then(function(data) {
                     console.log("Chuck Norris prefill", data);
                     //Manipulate data as you see fit
-                    var d = data.value;
+                    var d = data.data.value;
                     if (d.categories.length > 0) {
                         d.category = d.categories.join(",");
                         delete d.categories;
