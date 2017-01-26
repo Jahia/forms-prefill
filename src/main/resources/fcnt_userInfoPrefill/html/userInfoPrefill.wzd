@@ -7,4 +7,8 @@ prefill {
     serviceName "userInfoPrefillService"
     dataKey "name"
     availableDataKeys "name", "email", "path"
+
+    properties {
+        hideAfterPrefill "false"
+    }
 }
