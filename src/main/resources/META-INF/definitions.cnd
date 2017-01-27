@@ -3,3 +3,4 @@
 
 [fcnt:userInfoPrefill] > jnt:content, fcmix:prefill, mix:title, jmix:droppableContent, jmix:hiddenType
 [fcnt:chuckNorrisPrefill] > jnt:content, fcmix:prefill, mix:title, jmix:droppableContent, jmix:hiddenType
+[fcnt:geolocationPrefill] > jnt:content, fcmix:prefill, mix:title, jmix:droppableContent, jmix:hiddenType

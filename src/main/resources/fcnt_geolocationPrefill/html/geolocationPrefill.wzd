@@ -1,0 +1,14 @@
+package fcnt_geolocationPrefill.html
+
+prefill {
+    label "Geolocation Prefill"
+    type "super"
+    wizard "<ff-geolocation view-type='designView'></ff-geolocation>"
+    serviceName "geolocationPrefillService"
+    dataKey "formatted_address"
+    availableDataKeys "formatted_address", "postal_code", "country"
+
+    properties {
+        hideAfterPrefill "false"
+    }
+}
