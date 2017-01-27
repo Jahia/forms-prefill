@@ -7,4 +7,8 @@ prefill {
     serviceName "chuckNorrisPrefillService"
     dataKey "joke"
     availableDataKeys "joke", "category", "id"
+
+    properties {
+            hideAfterPrefill "false"
+        }
 }
