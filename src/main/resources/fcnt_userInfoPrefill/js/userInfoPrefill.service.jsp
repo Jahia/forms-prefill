@@ -3,10 +3,10 @@
 (function () {
     'use strict';
 
-    var userInfoPrefillService = function (contextualData, $q, $http) {
+    var userInfoPrefillService = function (contextualData, $q, $http, $timeout) {
 
         var dataCache = null;
-        var q = null;
+        var deferred = null;
 
         /**
          * MUST IMPLEMENT
@@ -15,37 +15,39 @@
          * @returns {Promise}
          */
         this.getData = function() {
+            if (deferred !== null) {
+                return deferred;
+            }
+
+            deferred = $q.defer();
+
             if (dataCache !== null) {
-                return $q(function(resolve, reject) {
-                    resolve(dataCache);
-                });
+                $timeout(function(resolve, reject) {
+                    deferred.resolve(dataCache);
+                }, 100);
+                return deferred;
             }
 
-            if (q !== null) {
-                return q;
-            }
 
-            q = $q(function(resolve, reject) {
-                $http({
-                    //Entry point implemented in form-factory-core module as an example
-                    url: contextualData.context + '/modules/formfactory/live/userinfo/' + contextualData.locale,
-                    method: 'GET'
-                }).then(function(data) {
-                    console.log("User info prefill service", data);
-                    //Manipulate data as you see fit
+            $http({
+                //Entry point implemented in form-factory-core module as an example
+                url: contextualData.context + '/modules/formfactory/live/userinfo/' + contextualData.locale,
+                method: 'GET'
+            }).then(function(data) {
+                console.log("User info prefill service", data);
+                //Manipulate data as you see fit
 
-                    //Cache data to avoid future requests
-                    dataCache = data.data;
-                    resolve(dataCache);
-                }, function(error) {
-                    reject(error);
-                });
+                //Cache data to avoid future requests
+                dataCache = data.data;
+                deferred.resolve(dataCache);
+            }, function(error) {
+                deferred.reject(error);
             });
-            return q;
+            return deferred;
         }
     };
 
     angular.module('formFactory')
             .service('userInfoPrefillService', ["contextualData",
-                "$q", "$http", userInfoPrefillService]);
+                "$q", "$http", "$timeout", userInfoPrefillService]);
 })();
