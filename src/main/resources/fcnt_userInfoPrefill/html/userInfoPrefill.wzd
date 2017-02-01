@@ -10,5 +10,6 @@ prefill {
 
     properties {
         hideAfterPrefill "false"
+        makeReadOnlyAfterPrefill "false"
     }
 }
