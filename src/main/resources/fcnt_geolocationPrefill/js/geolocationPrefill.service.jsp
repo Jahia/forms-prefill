@@ -32,13 +32,18 @@
 
                 function getGeoLocation() {
                     if ($window.navigator.geolocation) {
-                        $window.navigator.geolocation.getCurrentPosition(processCoords, geolocationErrorHandler);
+                        console.log("Requesting browser geolocation object");
+                        $window.navigator.geolocation.getCurrentPosition(processCoords, geolocationErrorHandler,{
+                            maximumAge: 1000*60*30,
+                            timeout: 5000
+                        });
                     } else {
                         deferred.reject('Geolocation is unavailable.');
                     }
                 }
 
                 function processCoords(geolocation) {
+                    console.log("Requesting google geolocation object");
                     $http({
                         //Entry point implemented in form-factory-core module as an example
                         url: 'https://maps.googleapis.com/maps/api/geocode/json',
