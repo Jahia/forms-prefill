@@ -59,8 +59,9 @@
     <name>Form Factory Prefill (User profile / Geo localisation)</name>
     <description>This module provide pre-filling of Form Factory fields from a user profile or it's geo localisation</description>
     <scm>
-        <connection>scm:dummy:uri</connection>
-        <developerConnection>scm:dummy:uri</developerConnection>
+        <connection>scm:git:git@github.com:Jahia/form-factory-prefill.git</connection>
+        <url>https://github.com/Jahia/form-factory-prefill</url>
+        <developerConnection>scm:git:git@github.com:Jahia/form-factory-prefill.git</developerConnection>
     </scm>
     <distributionManagement>
         <repository>
