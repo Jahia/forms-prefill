@@ -6,7 +6,7 @@ prefill {
     wizard "<ff-geolocation view-type='designView'></ff-geolocation>"
     serviceName "geolocationPrefillService"
     dataKey "formatted_address"
-    availableDataKeys "formatted_address", "postal_code", "country"
+    availableDataKeys "formatted_address", "postal_code", "country", "country_object"
 
     properties {
         hideAfterPrefill "false"

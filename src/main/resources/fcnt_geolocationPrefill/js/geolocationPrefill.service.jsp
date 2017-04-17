@@ -3,7 +3,7 @@
     (function () {
         'use strict';
 
-        var geoLocationPrefill = function (contextualData, $q, $http, $window, $timeout) {
+        var geoLocationPrefill = function (contextualData, $q, $http, $window, $timeout, ffCountryListService) {
 
             var dataCache = null;
             var deferred = null;
@@ -80,6 +80,7 @@
                             }
                             if (itemsToSearch['country'] && _.find(location['address_components'][i].types, findProperty('country'))) {
                                 dataCache['country'] = location['address_components'][i]['long_name'];
+                                dataCache['country_object'] = ffCountryListService.getCountryListObjByCode(location['address_components'][i]['short_name'])
                                 itemsToSearch['country'] = !itemsToSearch['country'];
                                 continue;
                             }
@@ -105,5 +106,5 @@
 
         angular.module('formFactory')
             .service('geolocationPrefillService', ['contextualData',
-                '$q', '$http', '$window', '$timeout', geoLocationPrefill]);
+                '$q', '$http', '$window', '$timeout', 'ffCountryListService', geoLocationPrefill]);
     })();
