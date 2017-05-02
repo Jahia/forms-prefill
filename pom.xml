@@ -52,7 +52,7 @@
         <version>7.1.0.0</version>
     </parent>
     <artifactId>form-factory-prefill</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>Form Factory Prefill (User profile / Geo localisation)</name>
     <description>This module provide pre-filling of Form Factory fields from a user profile or it's geo localisation</description>
