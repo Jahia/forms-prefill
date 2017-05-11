@@ -52,7 +52,7 @@
         <version>7.1.1.0</version>
     </parent>
     <artifactId>form-factory-prefill</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>bundle</packaging>
     <name>Form Factory Prefill (User profile / Geo location)</name>
     <description>This module provide pre-filling of Form Factory fields from a user profile or it's geo location</description>
@@ -60,7 +60,7 @@
         <connection>scm:git:git@github.com:Jahia/form-factory-prefill.git</connection>
         <url>https://github.com/Jahia/form-factory-prefill</url>
         <developerConnection>scm:git:git@github.com:Jahia/form-factory-prefill.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>1_0_1</tag>
   </scm>
     <distributionManagement>
         <repository>
