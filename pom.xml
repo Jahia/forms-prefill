@@ -51,15 +51,15 @@
         <artifactId>jahia-modules</artifactId>
         <version>7.1.1.0</version>
     </parent>
-    <artifactId>form-factory-prefill</artifactId>
+    <artifactId>forms-prefill</artifactId>
     <version>1.0.3-SNAPSHOT</version>
     <packaging>bundle</packaging>
-    <name>Form Factory Prefill (User profile / Geo location)</name>
-    <description>This module provide pre-filling of Form Factory fields from a user profile or it's geo location</description>
+    <name>Forms Prefill (User profile / Geo location)</name>
+    <description>This module provide pre-filling of Forms fields from a user profile or it's geo location</description>
     <scm>
-        <connection>scm:git:git@github.com:Jahia/form-factory-prefill.git</connection>
-        <url>https://github.com/Jahia/form-factory-prefill</url>
-        <developerConnection>scm:git:git@github.com:Jahia/form-factory-prefill.git</developerConnection>
+        <connection>scm:git:git@github.com:Jahia/forms-prefill.git</connection>
+        <url>https://github.com/Jahia/forms-prefill</url>
+        <developerConnection>scm:git:git@github.com:Jahia/forms-prefill.git</developerConnection>
       <tag>HEAD</tag>
   </scm>
     <distributionManagement>
@@ -73,13 +73,13 @@
         </snapshotRepository>
     </distributionManagement>
     <properties>
-        <jahia-depends>default,siteSettings,form-factory-core</jahia-depends>
+        <jahia-depends>default,siteSettings,forms-core</jahia-depends>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.jahia.modules</groupId>
-            <artifactId>form-factory-core</artifactId>
-            <version>2.1.2</version>
+            <artifactId>forms-core</artifactId>
+            <version>3.0.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
