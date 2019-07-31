@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <form-factory-prefill j:dependencies="default form-factory-core siteSettings"
+        <forms-prefill j:dependencies="default forms-core siteSettings"
                             j:modulePriority="0"
                             j:moduleType="module"
-                            j:title="Form Factory prefill examples"
+                            j:title="Forms prefill examples"
                             jcr:primaryType="jnt:module">
                 
                 <portlets jcr:primaryType="jnt:portletFolder"/>
@@ -15,6 +15,6 @@
                     <contents jcr:primaryType="jnt:contentFolder"/>
                 </templates>
                 
-            </form-factory-prefill>
+            </forms-prefill>
     </modules>
 </content>

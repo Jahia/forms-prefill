@@ -45,7 +45,6 @@
                 function processCoords(geolocation) {
                     console.log("Requesting google geolocation object");
                     $http({
-                        //Entry point implemented in form-factory-core module as an example
                         url: 'https://maps.googleapis.com/maps/api/geocode/json',
                         method: 'GET',
                         params: {

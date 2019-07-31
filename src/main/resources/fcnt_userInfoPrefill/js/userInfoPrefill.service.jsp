@@ -30,8 +30,8 @@
 
 
             $http({
-                //Entry point implemented in form-factory-core module as an example
-                url: contextualData.context + '/modules/formfactory/live/userinfo/' + contextualData.locale,
+                //Entry point implemented in forms-core module as an example
+                url: contextualData.context + contextualData.apiEntryPoint + '/userinfo/' + contextualData.locale,
                 method: 'GET'
             }).then(function(data) {
                 console.log("User info prefill service", data);
