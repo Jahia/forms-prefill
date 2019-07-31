@@ -1,4 +1,4 @@
-Form Factory Prefill
+Forms Prefill
 ====================
 
-This module contains examples of form factory prefill functionality
+This module contains examples of Forms prefill functionality
