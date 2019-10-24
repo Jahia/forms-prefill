@@ -52,7 +52,7 @@
         <version>7.3.0.1</version>
     </parent>
     <artifactId>forms-prefill</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>Forms Prefill (User profile / Geo location)</name>
     <description>This module provide pre-filling of Forms fields from a user profile or it's geo location</description>
@@ -60,7 +60,7 @@
         <connection>scm:git:git@github.com:Jahia/forms-prefill.git</connection>
         <url>https://github.com/Jahia/forms-prefill</url>
         <developerConnection>scm:git:git@github.com:Jahia/forms-prefill.git</developerConnection>
-      <tag>1_1_0</tag>
+      <tag>HEAD</tag>
   </scm>
     <distributionManagement>
         <repository>
