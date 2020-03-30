@@ -7,7 +7,7 @@
 
                                     http://www.jahia.com
 
-        Copyright (C) 2002-2019 Jahia Solutions Group SA. All rights reserved.
+        Copyright (C) 2002-2020 Jahia Solutions Group SA. All rights reserved.
 
         THIS FILE IS AVAILABLE UNDER TWO DIFFERENT LICENSES:
         1/GPL OR 2/JSEL
@@ -28,7 +28,7 @@
         GNU General Public License for more details.
 
         You should have received a copy of the GNU General Public License
-        along with this program. If not, see <http://www.gnu.org/licenses />.
+        along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
         2/ JSEL - Commercial and Supported Versions of the program
@@ -44,15 +44,16 @@
         please contact the sales department at sales@jahia.com.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jahia.modules</groupId>
         <artifactId>jahia-modules</artifactId>
-        <version>7.3.0.1</version>
+        <version>7.5.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>forms-prefill</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>Forms Prefill (User profile / Geo location)</name>
     <description>This module provide pre-filling of Forms fields from a user profile or it's geo location</description>
@@ -60,8 +61,8 @@
         <connection>scm:git:git@github.com:Jahia/forms-prefill.git</connection>
         <url>https://github.com/Jahia/forms-prefill</url>
         <developerConnection>scm:git:git@github.com:Jahia/forms-prefill.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
     <distributionManagement>
         <repository>
             <id>form-factory-releases</id>
@@ -74,12 +75,13 @@
     </distributionManagement>
     <properties>
         <jahia-depends>default,siteSettings,forms-core</jahia-depends>
+        <jahia-module-signature>MCwCFHVbJrLC8yp1I0E8TNSaxpqxtOzVAhRoK6pWrb6NcdKpUJ5d3mqB42Tpdw==</jahia-module-signature>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.jahia.modules</groupId>
             <artifactId>forms-core</artifactId>
-            <version>2.4.0</version>
+            <version>3.0.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
