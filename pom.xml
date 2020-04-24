@@ -50,7 +50,7 @@
     <parent>
         <groupId>org.jahia.modules</groupId>
         <artifactId>jahia-modules</artifactId>
-        <version>7.5.0.0-SNAPSHOT</version>
+        <version>8.0.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>forms-prefill</artifactId>
     <version>2.0.0-SNAPSHOT</version>
@@ -75,7 +75,7 @@
     </distributionManagement>
     <properties>
         <jahia-depends>default,siteSettings,forms-core</jahia-depends>
-        <jahia-module-signature>MCwCFHVbJrLC8yp1I0E8TNSaxpqxtOzVAhRoK6pWrb6NcdKpUJ5d3mqB42Tpdw==</jahia-module-signature>
+        <jahia-module-signature>MCwCFEmuIfKcaZBuhDDIL5DSTqeN6pyTAhQbiZqmAMW70sPh7bcxrbGmXEDgHQ==</jahia-module-signature>
     </properties>
     <dependencies>
         <dependency>
