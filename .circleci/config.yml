@@ -1,0 +1,99 @@
+version: 2.1
+orbs:
+  docker: circleci/docker@0.5.20
+  slack: circleci/slack@3.4.2
+
+# Parameters are available to all elements of config.yml, these are accessible using `pipeline.parameters.PARAMETER`
+parameters:
+  slack_channel:
+    type: string
+    default: '#cci-forms'
+
+references:
+  workdir: &workdir
+    working_directory: ~/source
+
+  persist-workspace: &persist-workspace
+    persist_to_workspace:
+      root: ~/source
+      paths:
+        - .
+
+  attach-workspace: &attach-workspace
+    attach_workspace:
+      at: .
+
+jobs:
+  # The initialize clone and mvn install
+  initialize:
+    <<: *workdir
+    docker:
+      - image: circleci/openjdk:8-jdk-stretch
+    steps:
+      - checkout
+      - *persist-workspace
+
+  build:
+    <<: *workdir
+    docker: # run the steps with Docker
+      - image: circleci/openjdk:8-jdk-stretch
+    steps:
+      - *attach-workspace
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pom.xml" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: mvn -s .circleci/.circleci.settings.xml clean install
+      # Built module is stored in: /home/circleci/source/target/forms-prefill-SNAPSHOT.jar
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+      - run:
+          name: Prepare artifacts
+          command: |
+            mkdir /tmp/artifacts/
+            cp /home/circleci/source/target/*.jar /tmp/artifacts/
+      - store_artifacts:
+          path: /tmp/artifacts/
+      - *persist-workspace
+
+    # publish to nexus only after merging to master
+  publish:
+    <<: *workdir
+    docker: # run the steps with Docker
+      - image: circleci/openjdk:8-jdk-stretch
+    steps:
+      - *attach-workspace
+      - restore_cache:
+          keys:
+            - v1-dependencies-2-{{ checksum "pom.xml" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: mvn -s .circleci/.circleci.settings.xml clean install deploy
+      - slack/status:
+          channel: << pipeline.parameters.slack_channel >>
+          fail_only: true
+          include_project_field: true
+          include_visit_job_action: true
+          mentions: "channel"
+
+workflows:
+  version: 2
+  on-code-change:
+    jobs:
+      - initialize
+      - build:
+          context: QA_ENVIRONMENT
+          requires:
+            - initialize
+      - publish:
+          context: QA_ENVIRONMENT
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+
