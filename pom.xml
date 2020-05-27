@@ -74,7 +74,7 @@
     </distributionManagement>
     <properties>
         <jahia-depends>default,siteSettings,forms-core</jahia-depends>
-        <jahia-module-signature>MCwCFEmuIfKcaZBuhDDIL5DSTqeN6pyTAhQbiZqmAMW70sPh7bcxrbGmXEDgHQ==</jahia-module-signature>
+        <jahia-module-signature>MCwCFB1zVvkh4HWjrTheRBJLYjS/UEmrAhRy4TVHKKTAOGJmVdZ/xcdhBX6TdA==</jahia-module-signature>
     </properties>
     <dependencies>
         <dependency>
