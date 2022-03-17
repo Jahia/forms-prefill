@@ -75,6 +75,7 @@
     <properties>
         <jahia-depends>default,siteSettings,forms-core</jahia-depends>
         <jahia-module-signature>MCwCFB1zVvkh4HWjrTheRBJLYjS/UEmrAhRy4TVHKKTAOGJmVdZ/xcdhBX6TdA==</jahia-module-signature>
+        <jahia.plugin.version>6.2-SNAPSHOT</jahia.plugin.version>
     </properties>
     <dependencies>
         <dependency>
