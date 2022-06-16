@@ -2,20 +2,7 @@
 <settings>
     <profiles>
         <profile>
-            <id>sonar</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <sonar.host.url>${env.SONAR_URL}</sonar.host.url>
-                <sonar.login>${env.SONAR_TOKEN}</sonar.login>
-            </properties>
-        </profile>
-        <profile>
-            <id>internal</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+            <id>jahia-internal-repository</id>
             <repositories>
                 <repository>
                     <snapshots>
@@ -26,23 +13,44 @@
                     <url>https://repo1.maven.org/maven2/</url>
                 </repository>
                 <repository>
+                    <id>jahia-internal</id>
+                    <name>Jahia Internal Repository</name>
+                    <url>https://devtools.jahia.com/nexus/content/groups/internal</url>
                     <releases>
                         <enabled>true</enabled>
                         <updatePolicy>never</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
                     </snapshots>
-                    <id>jahia-internal</id>
-                    <name>Jahia Internal Repository</name>
-                    <url>https://devtools.jahia.com/nexus/content/groups/internal</url>
                 </repository>
             </repositories>
         </profile>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.host.url>${env.SONAR_URL}</sonar.host.url>
+                <sonar.login>${env.SONAR_TOKEN}</sonar.login>
+            </properties>
+        </profile>
     </profiles>
+
+    <activeProfiles>
+        <activeProfile>jahia-internal-repository</activeProfile>
+    </activeProfiles>
+
     <servers>
         <server>
             <id>jahia-enterprise</id>
+            <username>${env.NEXUS_USERNAME}</username>
+            <password>${env.NEXUS_PASSWORD}</password>
+        </server>
+        <server>
+            <id>staging-repository</id>
             <username>${env.NEXUS_USERNAME}</username>
             <password>${env.NEXUS_PASSWORD}</password>
         </server>
@@ -63,18 +71,13 @@
         </server>
         <server>
             <id>jahia-internal</id>
-            <username>${env.NEXUS_RELEASE_USERNAME}</username>
-            <password>${env.NEXUS_RELEASE_PASSWORD}</password>
+            <username>${env.NEXUS_USERNAME}</username>
+            <password>${env.NEXUS_PASSWORD}</password>
         </server>
         <server>
             <id>jahia-internal-snapshots</id>
             <username>${env.NEXUS_USERNAME}</username>
             <password>${env.NEXUS_PASSWORD}</password>
-        </server>
-        <server>
-            <id>staging-repository</id>
-            <username>${env.NEXUS_RELEASE_USERNAME}</username>
-            <password>${env.NEXUS_RELEASE_PASSWORD}</password>
         </server>
     </servers>
     <pluginGroups>
